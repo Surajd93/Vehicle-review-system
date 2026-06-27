@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feature Comparison</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+  <div class="page-header">
+    <h2>Feature Comparison — {{ meta.v1 }} vs {{ meta.v2 }}</h2>
+  </div>
+
+  <div class="stepper">
+    <a href="{{ url_for('price_variants') }}">1. Price & Variants</a>
+    <a href="{{ url_for('specs') }}">2. Specs Overview</a>
+    <a href="{{ url_for('features') }}">3. Features</a>
+    <a href="{{ url_for('performance') }}">4. Performance</a>
+    <a href="{{ url_for('pros_cons') }}">5. Pros & Cons</a>
+    <a href="{{ url_for('best_fit') }}">6. Best Fit</a>
+  </div>
+
+  <div class="content">
+    {{ content|safe }}
+  </div>
+
+  <div class="nav-buttons">
+    <a href="{{ url_for('specs') }}">⬅ Previous</a>
+    <a href="{{ url_for('performance') }}">Next ➝</a>
+  </div>
+</body>
+</html>

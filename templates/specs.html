@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Specifications Overview</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+  <main class="page-card">
+    <h2>Specifications Overview — {{ meta.v1 }} vs {{ meta.v2 }}</h2>
+
+    <!-- Two equal boxes -->
+    <div class="comparison-grid">
+      <div class="vehicle-card">
+        <div class="gradient-box">{{ meta.v1 }}</div>
+        {{ content_v1|safe }}
+      </div>
+      <div class="vehicle-card">
+        <div class="gradient-box">{{ meta.v2 }}</div>
+        {{ content_v2|safe }}
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-buttons">
+      <a href="{{ url_for('price_variants') }}">⬅ Previous</a>
+      <a href="{{ url_for('features') }}">Next ➝</a>
+    </div>
+  </main>
+</body>
+</html>

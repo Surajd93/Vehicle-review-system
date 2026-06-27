@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <main class="page-card">
+  <h2>Specifications Overview — {{ meta.v1 }} vs {{ meta.v2 }}</h2>
+
+  <!-- Stepper (top navigation) -->
+  <div class="stepper">
+    <a href="{{ url_for('price_variants') }}">1. Price</a>
+    <a href="{{ url_for('specs') }}">2. Specs</a>
+    <a href="{{ url_for('features') }}">3. Features</a>
+    <a href="{{ url_for('performance') }}">4. Performance</a>
+    <a href="{{ url_for('pros_cons') }}">5. Pros/Cons</a>
+    <a href="{{ url_for('best_fit') }}">6. Best Fit</a>
+  </div>
+
+  <!-- Two-column comparison -->
+  <div class="comparison-grid">
+    <div class="vehicle-card">
+      <div class="vehicle-name-box gradient-box">{{ meta.v1 }}</div>
+      {{ content_v1|safe }}
+    </div>
+    <div class="vehicle-card">
+      <div class="vehicle-name-box gradient-box">{{ meta.v2 }}</div>
+      {{ content_v2|safe }}
+    </div>
+  </div>
+
+  <!-- Prev / Next buttons -->
+  <div class="nav-buttons">
+    <a href="{{ url_for('price_variants') }}">⬅ Previous</a>
+    <a href="{{ url_for('features') }}">Next ➝</a>
+  </div>
+</main>
+
+  <title>Best Fit for Buyers</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+  <div class="page-header">
+    <h2>Best Fit for Buyers — {{ meta.v1 }} vs {{ meta.v2 }}</h2>
+  </div>
+
+  <div class="stepper">
+    <a href="{{ url_for('price_variants') }}">1. Price & Variants</a>
+    <a href="{{ url_for('specs') }}">2. Specs Overview</a>
+    <a href="{{ url_for('features') }}">3. Features</a>
+    <a href="{{ url_for('performance') }}">4. Performance</a>
+    <a href="{{ url_for('pros_cons') }}">5. Pros & Cons</a>
+    <a href="{{ url_for('best_fit') }}">6. Best Fit</a>
+  </div>
+
+  <div class="content">
+    {{ content|safe }}
+  </div>
+
+  <div class="nav-buttons">
+    <a href="{{ url_for('pros_cons') }}">⬅ Previous</a>
+    <a href="{{ url_for('read_root') }}">🏠 Home</a>
+  </div>
+</body>
+</html>
